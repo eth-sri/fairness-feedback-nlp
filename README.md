@@ -1,4 +1,4 @@
-# Fairness-Feedback-NLP
+# Human-Guided Fair Classification for NLP
 
 This repository accompanies our ICLR 2023 paper [Human-Guided Fair Classification for Natural Language Processing](https://openreview.net/forum?id=N_g8TT9Cy7f).
 
@@ -28,7 +28,7 @@ cd Code
 chmod +x Generation.sh
 ./Generation.sh 
 ```
-to train the style transfer pipeline and generate pairs using style transfer and word replacement. Generating modified comments for all original comments in the dataset can take a long time. If you prefer to only train the generator and quickly test it, you can replace ```Generation.sh``` with ```Generation_Quick.sh```. If you also want to use GPT-3 generation, run ```Generation_GPT.sh``` instead. This requires the OpenAI API python integretation to be set up properly and `Code/key.txt` replaced with the appropriate API key. Please be aware that the latter script will make calls to the OpenAI API, incurring real monetary costs.
+to train the style transfer pipeline and generate pairs using style transfer and word replacement. The resulting generations can be found in the corresponding folders in [Code/generations](Code/generations). Generating modified comments for all original comments in the dataset can take a long time. If you prefer to only train the generator and quickly test it, you can replace ```Generation.sh``` with ```Generation_Quick.sh```. If you also wish to use GPT-3 generation, run ```Generation_GPT.sh``` instead. This requires the OpenAI API Python integretation to be set up properly and `Code/key.txt` replaced with the appropriate API key. Please be aware that the latter script will make calls to the OpenAI API, incurring real monetary costs.
 
 After `Generation.sh` has finished, the results from Table 1 in the paper can be (partially) replicated via
 ```
