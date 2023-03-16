@@ -41,10 +41,11 @@ If you used ```Generation_GPT.sh``` in the previous step, you can fully replicat
 
 ## Citing this work
 ```
-@inproceedings{dorner2023generating,
+@inproceedings{
+dorner2023humanguided,
 title={Human-Guided Fair Classification for Natural Language Processing},
 author={Florian E. Dorner and Momchil Peychev and Nikola Konstantinov and Naman Goel and Elliott Ash and Martin Vechev},
-booktitle={International Conference on Learning Representations},
+booktitle={The Eleventh International Conference on Learning Representations },
 year={2023},
 url={https://openreview.net/forum?id=N_g8TT9Cy7f}
 }
