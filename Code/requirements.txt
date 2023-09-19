@@ -3,4 +3,4 @@ torch==1.11.0
 tqdm==4.64.0
 transformers==4.18.0
 pandas==1.4.2
-scipy==1.6.3
+scipy==1.10.0
