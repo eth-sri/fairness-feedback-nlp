@@ -17,7 +17,7 @@ Jump to section:
 The dataset was created to better understand human intuitions about individual fairness, specifically in the context of toxicity classification on the [Jigsaw Civil Comments dataset](https://www.kaggle.com/competitions/jigsaw-unintended-bias-in-toxicity-classification/overview).
 
 ### Who created the dataset (e.g., which team, research group) and on behalf of which entity (e.g., company, institution, organization)?
-The dataset was created as part of the work on the ICLR paper [Human-Guided Fair Classification for Natural Language Processing](https://openreview.net/forum?id=N_g8TT9Cy7fw) that came out of a MSc. Thesis project conducted with the [SRI Lab](https://www.sri.inf.ethz.ch) and the [Law, Economics, and Data Science Group](https://lawecondata.ethz.ch/) at ETH Zurich. 
+The dataset was created as part of the work on the ICLR paper [Human-Guided Fair Classification for Natural Language Processing](https://arxiv.org/abs/2212.10154) that came out of a MSc. Thesis project conducted with the [SRI Lab](https://www.sri.inf.ethz.ch) and the [Law, Economics, and Data Science Group](https://lawecondata.ethz.ch/) at ETH Zurich. 
 
 ### Who funded the creation of the dataset? 
 The MTurk study that generated human responses was funded by the Law, Economics, and Data Science Group, while computational resources were provided by the SRI Lab. 
@@ -33,13 +33,13 @@ Our dataset consists of online comments that originate from the [Jigsaw Civil Co
 There is a total of 125240 comment pairs. 
 
 ### Does the dataset contain all possible instances or is it a sample (not necessarily random) of instances from a larger set?
-Our dataset only contains a heuristic subset of all comment pairs: It is only based on original comments from the [Jigsaw Civil Comments dataset](https://www.kaggle.com/competitions/jigsaw-unintended-bias-in-toxicity-classification/overview), and we only use the approaches described in our [paper](https://openreview.net/forum?id=N_g8TT9Cy7fw) for producing modified comments. As our annotation efforts were partially guided by active learning, the subset of annotated comment pairs is also not selected randomly. Lastly, the human annotations for our Dataset were produced by MTurk workers in the US, and are as such not a representative sample of worldwide intuitions about individual fairness. 
+Our dataset only contains a heuristic subset of all comment pairs: It is only based on original comments from the [Jigsaw Civil Comments dataset](https://www.kaggle.com/competitions/jigsaw-unintended-bias-in-toxicity-classification/overview), and we only use the approaches described in our [paper](https://arxiv.org/abs/2212.10154) for producing modified comments. As our annotation efforts were partially guided by active learning, the subset of annotated comment pairs is also not selected randomly. Lastly, the human annotations for our Dataset were produced by MTurk workers in the US, and are as such not a representative sample of worldwide intuitions about individual fairness. 
 
 ### What data does each instance consist of? 
 Each instance consists of a pair of comments with varying degrees of human annotations in the form of labels (such as fairness-relevant similarity of the original and modified comment), and explanations for the labels: 4990 of the comment pairs have a single human-provided label regarding individual fairness, while 500 have three, 700 have five, and 720 have nine. One tenth of human labels are paired with an explanation. In addition, the 720 pairs with nine fairness-labels have additional labels that provide information on content preservation, correct transfer of demographic groups, as well as preservation of grammaticality and truthfulness between the original and modified comment. 
 
 ### Is there a label or target associated with each instance?
-Each pair of comments ("Original_Comment", "Modified_Comment") comes with the group mentioned in the respective comments ("Original_Group","Modified_Group") and the method used for generating the modified comment ("Generation_Method"). Some entries in train.csv additionally contain fairness judgments ("Answer_AL") and explanations for these judgments ("Explanation_AL") for the original active learning run from our paper [paper](https://openreview.net/forum?id=N_g8TT9Cy7fw) as well as for the relabeling ("Answer_AL_Relabel_i","Explanation_AL_Relabel_i"). Meanwhile, some entries in test.csv contain personal fairness judgments ("Answer_Personal_i"), predicted fairness judgments of the average american ("Answer_i") and explanaitions for these ("Explanation_i") as well as a judgment on the correctness of the demographic group transfer ("Group_Transfer_i") and the preservation of grammaticality ("Grammar_Preservation_i"), truthfulness (Truth_Preservation_i) and content ("Content_Preservation_i") by different crowdworkers. In the following, we reproduce the survey questions and the associated answer coding:
+Each pair of comments ("Original_Comment", "Modified_Comment") comes with the group mentioned in the respective comments ("Original_Group","Modified_Group") and the method used for generating the modified comment ("Generation_Method"). Some entries in train.csv additionally contain fairness judgments ("Answer_AL") and explanations for these judgments ("Explanation_AL") for the original active learning run from our paper [paper](https://arxiv.org/abs/2212.10154) as well as for the relabeling ("Answer_AL_Relabel_i","Explanation_AL_Relabel_i"). Meanwhile, some entries in test.csv contain personal fairness judgments ("Answer_Personal_i"), predicted fairness judgments of the average american ("Answer_i") and explanaitions for these ("Explanation_i") as well as a judgment on the correctness of the demographic group transfer ("Group_Transfer_i") and the preservation of grammaticality ("Grammar_Preservation_i"), truthfulness (Truth_Preservation_i) and content ("Content_Preservation_i") by different crowdworkers. In the following, we reproduce the survey questions and the associated answer coding:
 
 "Answer_Personal_i":
 Without further context, would you consider it unfair or acceptable for a content moderator
@@ -97,7 +97,7 @@ Only a subset of our comment pairs comes with human annotations.
 --
 
 ### Are there recommended data splits (e.g., training, development/validation, testing)?
-There is no immediate benchmark associated with our dataset. The file train.csv contains the datapool used in our [paper](https://openreview.net/forum?id=N_g8TT9Cy7fw) for active learning, while test.csv contains data points we reserved for testing our active learning approach. 
+There is no immediate benchmark associated with our dataset. The file train.csv contains the datapool used in our [paper](https://arxiv.org/abs/2212.10154) for active learning, while test.csv contains data points we reserved for testing our active learning approach. 
 
 
 ### Are there any errors, sources of noise, or redundancies in the dataset?
@@ -139,7 +139,7 @@ We had workers pass a qualification test by providing correct answers for nine o
 tests. Blocks of queries with wrong answers to the attention check question or (partially) incoherent verbal explanations were manually reviewed, and thrown out in case we were not able to find evidence that the worker had correctly understood the task.
 
 ### If the dataset is a sample from a larger set, what was the sampling strategy (e.g., deterministic, probabilistic with specific sampling probabilities)?
-Please consider our [paper](https://openreview.net/forum?id=N_g8TT9Cy7fw) for detailed information on how different parts of the dataset were created and annotated.
+Please consider our [paper](https://arxiv.org/abs/2212.10154) for detailed information on how different parts of the dataset were created and annotated.
 
 ### Who was involved in the data collection process (e.g., students, crowdworkers, contractors) and how were they compensated (e.g., how much were crowdworkers paid)?
 In order to participate, workers had to live in the US and be above 18 years old in addition to being experienced with MechanicalTurk (having completed more than 5000 HITs5 and having a good reputation (97% acceptance rate across all of the worker’s HITs). Workers were warned about the potentially offensive content of some of the comments show in the study by the following statement: "Please note that this study contains offensive content. If you do not wish to see such content, please withdraw from the study by leaving this website." and were also told that they could withdraw from the study at any later point: "You may withdraw your participation at any time without specifying reasons and without any disadvantages (however, you will not get paid for the current HIT in case you withdraw before completing it)". Workers were paid between $0.83 and $1.83 per battery of 11 comment pairs, depending on the exact annotation task. Workers were not paid for blocks of queries that were discarded for failing attention checks and/or incoherent explanations. According to https://turkerview.com, a tool used by many professional workers on MechanicalTurk, we paid workers an average hourly rate of $16.17, clearly exceeding the US minimum wage. While this is likely an overestimate, as not all workers use turkerview, the hourly rate is so high, that we still exceed the minimum wage for workers taking twice as long as the average worker using turkerview. 
@@ -184,7 +184,7 @@ No.
 
 ## Uses
 ### Has the dataset been used for any tasks already?
-The dataset has been used for both facilitating and evaluating individual fairness based on the collected human fairness judgments in our [paper](https://openreview.net/forum?id=N_g8TT9Cy7fw).
+The dataset has been used for both facilitating and evaluating individual fairness based on the collected human fairness judgments in our [paper](https://arxiv.org/abs/2212.10154).
 
 ### Is there a repository that links to any or all papers or systems that use the dataset?
 --
